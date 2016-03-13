@@ -40,7 +40,7 @@ public class SleepEntryTest {
 		// Test against actual
 //		assertEquals(timeSleep, entry.getTimeIn());
 //		assertEquals(timeWake, entry.getTimeOut());
-		assertCalendarEquals(timeSleep, entry.getTimeIn());
+		assertCalendarEquals(timeSleep, entry.getTimeSleep());
 		assertEquals(duration, entry.getDuration(), 0.01);
 		
 	}
@@ -64,7 +64,7 @@ public class SleepEntryTest {
 		// Test against actual
 //		assertEquals(timeSleep, entry.getTimeIn());
 //		assertEquals(timeWake, entry.getTimeOut());
-		assertCalendarEquals(timeSleep, entry.getTimeIn());
+		assertCalendarEquals(timeSleep, entry.getTimeSleep());
 		assertEquals(duration, entry.getDuration(), 0.01);
 		
 	}
@@ -86,16 +86,21 @@ public class SleepEntryTest {
 
 	@Test
 	public void testGetEffectiveDate() {
+		// Create test values
+		Calendar timeSleep = Calendar.getInstance();
+		timeSleep.set(2015, Calendar.DECEMBER, 3, 21, 00); // 3, because day is zero-based
+		Calendar timeWake = Calendar.getInstance();
+		timeWake.set(2015, Calendar.DECEMBER, 4, 00, 40);
+		SleepEntry entry = new SleepEntry(timeIn, timeOut, 0.0);
+	}
+
+	@Test
+	public void testGetTimeSleep() {
 		fail("Not yet implemented");
 	}
 
 	@Test
-	public void testGetTimeIn() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testGetTimeOut() {
+	public void testGetTimeWake() {
 		fail("Not yet implemented");
 	}
 

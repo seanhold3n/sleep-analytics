@@ -24,8 +24,7 @@ $(document).ready(function () {
             text: 'data is estimated'
         },
         xAxis: [{
-            categories: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday',
-                'Sunday'],
+            categories: ${xAxisCategories},
             crosshair: true
         }],
         yAxis: [{ // mood points
@@ -72,7 +71,7 @@ $(document).ready(function () {
             name: 'Hours of Sleep',
             type: 'column',
             yAxis: 1,
-            data: [8, 7, 5, 4, 6, 0, 9],
+            data: ${hoursData},
             tooltip: {
                 valueSuffix: ' hours'
             }

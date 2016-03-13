@@ -34,7 +34,7 @@ public class RunMe {
 	public RunMe() throws IOException {
 
 		cfg = createFreemarkerConfiguration();
-		setPort(8080);
+		setPort(8081);
 		initializeRoutes();
 	}
 

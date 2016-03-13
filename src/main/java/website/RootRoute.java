@@ -27,31 +27,31 @@ public class RootRoute extends FreemarkerBasedRoute{
 		
 		// TODO ask user for data from webpage
 		// Get CSV file
-		try (BufferedReader br = new BufferedReader(new FileReader(new File(TEST_DATA_LOCATION)))){
-			String line = "";
-			
-			// Ignore the first line
-			br.readLine();
-			
-			// Counter for current line
-			int curLine = 0;
-			// Number of lines down to read
-			int maxLine = 21;
-			
-			while (((line = br.readLine()) != null) && curLine <= maxLine){
-				// Convert the line to CSV
-				
-				// Store it in a list
-				
-				System.out.println(line);
-				
-				curLine++;
-			}
-			
-			
-		} catch (FileNotFoundException fnfe){
-			System.err.println("File not found, dawg!");
-		}
+//		try (BufferedReader br = new BufferedReader(new FileReader(new File(TEST_DATA_LOCATION)))){
+//			String line = "";
+//			
+//			// Ignore the first line
+//			br.readLine();
+//			
+//			// Counter for current line
+//			int curLine = 0;
+//			// Number of lines down to read
+//			int maxLine = 21;
+//			
+//			while (((line = br.readLine()) != null) && curLine <= maxLine){
+//				// Convert the line to CSV
+//				
+//				// Store it in a list
+//				
+//				System.out.println(line);
+//				
+//				curLine++;
+//			}
+//			
+//			
+//		} catch (FileNotFoundException fnfe){
+//			System.err.println("File not found, dawg!");
+//		}
 		
 		SimpleHash root = new SimpleHash();
 

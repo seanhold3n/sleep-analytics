@@ -2,6 +2,11 @@ package model;
 
 import java.util.HashMap;
 
+/**
+ * @author sean
+ * @deprecated Use a set of {@link DailyEntry} instead
+ */
+@Deprecated
 public final class DaySleepDurationMap extends HashMap<SimpleDay,Double> {
 
 	private static final long serialVersionUID = -4755148060348935227L;

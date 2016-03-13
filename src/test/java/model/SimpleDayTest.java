@@ -44,10 +44,9 @@ public class SimpleDayTest {
 	
 	@Test
 	public void testHashCode() {
-		SimpleDay sd1, sd2;
+		SimpleDay sd1;
 		sd1 = new SimpleDay(2016, 03, 13);
 		assertEquals(20160313, sd1.hashCode());
-		
 	}
 	
 	@Test

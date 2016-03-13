@@ -99,3 +99,9 @@ table {
 	max-width: 425px ;
 	font-family: "Courier New", Courier, monospace ;
 }
+
+button { 
+	background-color: #E37222 ; 
+	font-size: 50 px ;
+	border-radius: 90%;
+}

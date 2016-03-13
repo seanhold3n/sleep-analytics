@@ -1,0 +1,81 @@
+/* Rebecca's first time using CSS */ 
+/* styling for aboutIcanHazSleep.html */ 
+/* PolyHacks 2016 */ 
+
+/* adding background-color */ 
+body { 
+	background-color: #0B5172;
+}
+
+/* adding padding for head and body */
+head {
+	padding: 200px;
+}
+body {
+	padding: 200px; 
+}
+
+/* editing the color of text and the background-color of the text, font, and allignment */ 
+#h2 {
+	color: #FFFFFF
+	/* text-shadow: rgba(0, 0, 0, 1) -1px -2px 0.5em ; */
+}
+
+#greeting {
+	color: #FFFFFF ; 
+	background-color: #008542 ;
+	max-width: 300px ; 
+	font-family: "Courier New", Courier, monospace ; 
+}
+
+#canHasSleep { 
+	color: #000000 ;
+	background-color: #66CC33 ;
+	max-width: 300px ;
+	text-align: right ; 
+	font-family: "Courier New", Courier, monospace ;
+}
+
+#response { 
+	color: #FFFFFF ; 
+	background-color: #008542 ;
+	max-width: 300px ;
+	font-family: "Courier New", Courier, monospace ;
+}
+
+#projectDescription { 
+	color: #FFFFFF ; 
+	background-color: #008542 ;
+	max-width: 300px ;
+	font-family: "Courier New", Courier, monospace ;
+}
+
+#catAsks {
+	color: #000000 ;
+	background-color: #66CC33 ;
+	max-width: 300px ;
+	text-align: right ;
+	font-family: "Courier New", Courier, monospace ;
+}
+
+#responseToCat { 
+	color: #FFFFFF ; 
+	background-color: #008542 ;
+	max-width: 300px ;
+	font-family: "Courier New", Courier, monospace ;
+}
+
+#moodAsk { 
+	color: #000000 ;
+	background-color: #66CC33 ;
+	max-width: 300px ;
+	text-align: right ;
+	font-family: "Courier New", Courier, monospace ;
+}
+
+#MoodData {
+	color: #FFFFFF ; 
+	background-color: #008542 ;
+	max-width: 300px ;
+	font-family: "Courier New", Courier, monospace ;
+}

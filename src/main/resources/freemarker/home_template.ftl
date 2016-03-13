@@ -18,10 +18,10 @@ $(document).ready(function () {
             zoomType: 'xy'
         },
         title: {
-            text: 'Amount of Sleep Mapped to Mood'
+            text: 'Amount of Sleep over the last 5.5 years'
         },
         subtitle: {
-            text: 'This is Sean\'s actual sleep data!'
+            text: 'Seriously - this is Sean\'s actual sleep data!'
         },
         xAxis: [{
             categories: ${xAxisCategories},
@@ -208,7 +208,7 @@ button {
 <!-- heading for our about page -->
 		<h2> I can has Sleep? <br />Cat Analytics </h2> 
 		
-		<a href="aboutIcanHazSleep.html"><button type = "button"> About I can has Sleep? </button></a> 
+		<a href="about"><button type = "button"> About I can has Sleep? </button></a> 
 		
 		<br /> 
 		

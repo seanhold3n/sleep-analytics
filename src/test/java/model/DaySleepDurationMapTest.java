@@ -44,6 +44,12 @@ public class DaySleepDurationMapTest {
 		final String TEST_DATA_LOCATION = 
 				"target/classes/testdata/map-test-data.csv";
 		
+		// Max allowed delta for double precision
+		final double DELTA = 0.01;
+		
+		// Empty map
+		DaySleepDurationMap.getInstance().clear();
+		
 		// Get CSV file
 		try (BufferedReader br = new BufferedReader(new FileReader(new File(TEST_DATA_LOCATION)))){
 			String line = "";
@@ -51,6 +57,9 @@ public class DaySleepDurationMapTest {
 			while (((line = br.readLine()) != null)){
 				// Convert the line from CSV to a SleepEntry
 				SleepEntry se = SleepEntry.parseFromCSV(line);
+				
+				System.out.println(se.getEffectiveDate());
+				System.out.println(se.getEffectiveDate().hashCode());
 				
 				// Add data from that to the map
 				DaySleepDurationMap.getInstance().addToDay(se.getEffectiveDate(), se.getDuration());
@@ -60,6 +69,13 @@ public class DaySleepDurationMapTest {
 			// Make sure everything looks good
 			DaySleepDurationMap dsdm = DaySleepDurationMap.getInstance();
 			assertEquals(7, dsdm.size());
+			assertEquals(4.68, dsdm.get(new SimpleDay(2015, 12, 25)), DELTA);
+			assertEquals(13.08, dsdm.get(new SimpleDay(2015, 12, 26)), DELTA);
+			assertEquals(5.73, dsdm.get(new SimpleDay(2015, 12, 27)), DELTA);
+			assertEquals(12.0, dsdm.get(new SimpleDay(2015, 12, 28)), DELTA);
+			assertEquals(6.50, dsdm.get(new SimpleDay(2015, 12, 29)), DELTA);
+			assertEquals(6.67, dsdm.get(new SimpleDay(2015, 12, 30)), DELTA);
+			assertEquals(14.04, dsdm.get(new SimpleDay(2015, 12, 31)), DELTA);
 
 
 		} catch (FileNotFoundException fnfe){

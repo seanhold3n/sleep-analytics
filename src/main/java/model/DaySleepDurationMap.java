@@ -17,7 +17,8 @@ public final class DaySleepDurationMap extends HashMap<SimpleDay,Double> {
 		return singleMap;
 	}
 	
-	/** Add sleep time to the current map
+	/** Add sleep time to the current map.  Use this over {@link #put(SimpleDay, Double)}
+	 * to avoid accidentally overwriting data
 	 * @param day
 	 * @param increment
 	 */

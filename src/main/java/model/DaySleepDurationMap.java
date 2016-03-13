@@ -2,7 +2,7 @@ package model;
 
 import java.util.HashMap;
 
-public final class DaySleepDurationMap extends HashMap<SimpleDay,Integer> {
+public final class DaySleepDurationMap extends HashMap<SimpleDay,Double> {
 
 	private static final long serialVersionUID = -4755148060348935227L;
 	
@@ -21,8 +21,14 @@ public final class DaySleepDurationMap extends HashMap<SimpleDay,Integer> {
 	 * @param day
 	 * @param increment
 	 */
-	public void addToDay(SimpleDay day, int increment){
-		
+	public void addToDay(SimpleDay day, double increment){
+		// If the key doesn't exist, add it
+		if (!getInstance().containsKey(day)){
+			getInstance().put(day, increment);
+		}
+		else {
+			getInstance().put(day, Double.sum(getInstance().get(day), increment));
+		}
 	}
 
 }

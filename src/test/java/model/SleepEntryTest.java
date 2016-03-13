@@ -32,15 +32,16 @@ public class SleepEntryTest {
 		
 		// Create expected values
 		Calendar timeSleep = Calendar.getInstance();
-		timeSleep.set(2016, Calendar.JANUARY, 8, 18, 25); // 8, because day is zero-based
+		timeSleep.set(2016, Calendar.JANUARY, 9, 18, 25);
 		Calendar timeWake = Calendar.getInstance();
-		timeWake.set(2016, Calendar.JANUARY, 8, 20, 34);
+		timeWake.set(2016, Calendar.JANUARY, 9, 20, 34);
 		double duration = 2.14;
 		
 		// Test against actual
 //		assertEquals(timeSleep, entry.getTimeIn());
 //		assertEquals(timeWake, entry.getTimeOut());
 		assertCalendarEquals(timeSleep, entry.getTimeSleep());
+		assertEquals(new SimpleDay(2016, 1, 9), entry.getEffectiveDate());
 		assertEquals(duration, entry.getDuration(), 0.01);
 		
 	}

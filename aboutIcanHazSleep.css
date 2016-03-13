@@ -1,0 +1,18 @@
+/* Rebecca's first time using CSS */ 
+/* styling for aboutIcanHazSleep.html */ 
+/* PolyHacks 2016 */ 
+
+/* adding background-color */ 
+body { 
+	background-color: #000000;
+}
+
+/* adding padding for head and body */
+head {
+	padding: 200px;
+}
+body {
+	padding: 200px; 
+}
+
+/* editing the color of text and the background-color of the text */ 

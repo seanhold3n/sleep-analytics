@@ -76,16 +76,16 @@ public class SleepEntry implements Comparable<SleepEntry>{
 	}
 	
 	
-	public SleepEntry(Calendar timeIn, Calendar timeOut, double duration) {
-		this.timeIn = timeIn;
-		this.timeOut = timeOut;
+	public SleepEntry(Calendar timeSleep, Calendar timeWake, double duration) {
+		this.timeSleep = timeSleep;
+		this.timeWake = timeWake;
 		this.duration = duration;
 	}
 
 
-	private Calendar timeIn;
+	private Calendar timeSleep;
 
-	private Calendar timeOut;
+	private Calendar timeWake;
 
 	private double duration;
 
@@ -95,7 +95,7 @@ public class SleepEntry implements Comparable<SleepEntry>{
 	 * @see java.lang.Comparable#compareTo(java.lang.Object)
 	 */
 	public int compareTo(SleepEntry o) {
-		return this.timeIn.compareTo(o.getTimeIn());
+		return this.timeSleep.compareTo(o.getTimeSleep());
 	}
 	public double getDuration() {
 		return duration;
@@ -106,15 +106,15 @@ public class SleepEntry implements Comparable<SleepEntry>{
 	 * @return The date toward which clocked-in hours will count
 	 */
 	public Calendar getEffectiveDate(){
-		return getTimeOut();
+		return getTimeWake();
 	}
 	
-	public Calendar getTimeIn() {
-		return timeIn;
+	public Calendar getTimeSleep() {
+		return timeSleep;
 	}
 
-	public Calendar getTimeOut() {
-		return timeOut;
+	public Calendar getTimeWake() {
+		return timeWake;
 	}
 	
 	public boolean isZeroDuration(){

@@ -91,7 +91,7 @@ public class SleepEntryTest {
 		timeSleep.set(2015, Calendar.DECEMBER, 3, 21, 00); // 3, because day is zero-based
 		Calendar timeWake = Calendar.getInstance();
 		timeWake.set(2015, Calendar.DECEMBER, 4, 00, 40);
-		SleepEntry entry = new SleepEntry(timeIn, timeOut, 0.0);
+		SleepEntry entry = new SleepEntry(timeSleep, timeWake, 0.0);
 	}
 
 	@Test

@@ -8,11 +8,11 @@ public class SimpleDay { //implements Comparable<SimpleDay> {
 	private final int DAY;
 	
 	
-	public SimpleDay(int yEAR, int mONTH, int dAY) {
+	public SimpleDay(int year, int month, int day) {
 		super();
-		YEAR = yEAR;
-		MONTH = mONTH;
-		DAY = dAY;
+		YEAR = year;
+		MONTH = month;
+		DAY = day;
 	}
 
 

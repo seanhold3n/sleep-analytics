@@ -50,6 +50,10 @@ public class SimpleDay { //implements Comparable<SimpleDay> {
 		}
 	}
 
+	@Override
+	public String toString(){
+		return String.format("%02d/%02d/%02d", MONTH, DAY, YEAR-2000);
+	}
 
 	
 

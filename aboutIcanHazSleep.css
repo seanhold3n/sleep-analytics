@@ -12,7 +12,10 @@ head {
 	padding: 200px;
 }
 body {
-	padding: 200px; 
+	padding-right: 400px; 
+	padding-left: 400px;
+	padding-top: 70px
+	padding-bottom: 70px ; 
 }
 
 /* editing the color of text and the background-color of the text, font, and allignment */ 
@@ -21,61 +24,78 @@ body {
 	/* text-shadow: rgba(0, 0, 0, 1) -1px -2px 0.5em ; */
 }
 
-#greeting {
+.greeting {
 	color: #FFFFFF ; 
 	background-color: #008542 ;
-	max-width: 300px ; 
+	max-width: 425px ; 
 	font-family: "Courier New", Courier, monospace ; 
 }
 
-#canHasSleep { 
+.canHasSleep { 
 	color: #000000 ;
 	background-color: #66CC33 ;
-	max-width: 300px ;
-	text-align: right ; 
+	max-width: 425px ;
+	text-align: left ; 
+	font-family: "Courier New", Courier, monospace ;
+	position: relative ; 
+	left: 300px ; 
+}
+
+.response { 
+	color: #FFFFFF ; 
+	background-color: #008542 ;
+	max-width: 425px ;
 	font-family: "Courier New", Courier, monospace ;
 }
 
-#response { 
+.projectDescription { 
 	color: #FFFFFF ; 
 	background-color: #008542 ;
-	max-width: 300px ;
-	font-family: "Courier New", Courier, monospace ;
-}
-
-#projectDescription { 
-	color: #FFFFFF ; 
-	background-color: #008542 ;
-	max-width: 300px ;
+	max-width: 425px ;
 	font-family: "Courier New", Courier, monospace ;
 }
 
 #catAsks {
 	color: #000000 ;
 	background-color: #66CC33 ;
-	max-width: 300px ;
-	text-align: right ;
+	max-width: 425px ;
+	text-align: left ;
 	font-family: "Courier New", Courier, monospace ;
+	position: relative ; 
+	left: 300px ; 
 }
 
 #responseToCat { 
 	color: #FFFFFF ; 
 	background-color: #008542 ;
-	max-width: 300px ;
+	max-width: 425px ;
 	font-family: "Courier New", Courier, monospace ;
 }
 
-#moodAsk { 
+table {
+	color: white ; 
+}
+
+.moodAsk { 
 	color: #000000 ;
 	background-color: #66CC33 ;
-	max-width: 300px ;
-	text-align: right ;
+	max-width: 425px ;
+	text-align: left ;
+	font-family: "Courier New", Courier, monospace ;
+	position: relative ; 
+	left: 300px ; 
+}
+
+.MoodData {
+	color: #FFFFFF ; 
+	background-color: #008542 ;
+	max-width: 425px ;
 	font-family: "Courier New", Courier, monospace ;
 }
 
-#MoodData {
+#moodScale { 
 	color: #FFFFFF ; 
 	background-color: #008542 ;
-	max-width: 300px ;
+	max-width: 425px ;
 	font-family: "Courier New", Courier, monospace ;
 }

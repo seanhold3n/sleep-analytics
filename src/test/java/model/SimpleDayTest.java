@@ -43,6 +43,14 @@ public class SimpleDayTest {
 	}
 	
 	@Test
+	public void testHashCode() {
+		SimpleDay sd1, sd2;
+		sd1 = new SimpleDay(2016, 03, 13);
+		assertEquals(20160313, sd1.hashCode());
+		
+	}
+	
+	@Test
 	public void testToString(){
 		SimpleDay myDay = new SimpleDay(2016, 03, 13);
 		assertEquals("03/13/16", myDay.toString());

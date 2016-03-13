@@ -49,6 +49,11 @@ public class SimpleDay { //implements Comparable<SimpleDay> {
 			return false;
 		}
 	}
+	
+	@Override
+	public int hashCode() {
+		return YEAR*10000 + MONTH*100 + DAY;
+	};
 
 	@Override
 	public String toString(){

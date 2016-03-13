@@ -16,7 +16,7 @@ import freemarker.template.TemplateException;
 public class RootRoute extends FreemarkerBasedRoute{
 
 	public static final String TEST_DATA_LOCATION = 
-			"testdata/sean-sleep-data.csv";
+			"target/classes/testdata/sean-sleep-data.csv";
 	
 	public RootRoute(Configuration cfg) throws IOException {
 		super("/", "home_template.ftl", cfg);
@@ -33,10 +33,22 @@ public class RootRoute extends FreemarkerBasedRoute{
 			// Ignore the first line
 			br.readLine();
 			
+			// Counter for current line
+			int curLine = 0;
+			// Number of lines down to read
+			int maxLine = 21;
 			
-			while ((line = br.readLine()) != null){
+			while (((line = br.readLine()) != null) && curLine <= maxLine){
+				// Convert the line to CSV
 				
+				// Store it in a list
+				
+				System.out.println(line);
+				
+				curLine++;
 			}
+			
+			
 		} catch (FileNotFoundException fnfe){
 			System.err.println("File not found, dawg!");
 		}

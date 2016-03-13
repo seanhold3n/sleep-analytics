@@ -23,8 +23,8 @@ import freemarker.template.TemplateException;
 public class RootRoute extends FreemarkerBasedRoute{
 
 	public static final String TEST_DATA_LOCATION = 
-//			"target/classes/testdata/sean-sleep-data.csv";
-			"target/classes/testdata/map-test-data.csv";
+			"target/classes/testdata/sean-sleep-data.csv";
+//			"target/classes/testdata/map-test-data.csv";
 	
 	public RootRoute(Configuration cfg) throws IOException {
 		super("/", "home_template.ftl", cfg);
@@ -37,7 +37,10 @@ public class RootRoute extends FreemarkerBasedRoute{
 		
 		// Get CSV file
 		BufferedReader br = new BufferedReader(new FileReader(new File(TEST_DATA_LOCATION)));
-		String line = "";	
+		String line = "";
+		
+		// Toss out header line
+		br.readLine();
 		
 		Set<DailyEntry> days = new HashSet<DailyEntry>();
 
@@ -95,8 +98,8 @@ public class RootRoute extends FreemarkerBasedRoute{
 			yAxis[i] = entries.get(i).getDuration();
 		}
 		
-		System.out.println(Arrays.toString(xAxis));
-		System.out.println(Arrays.toString(yAxis));
+//		System.out.println(Arrays.toString(xAxis));
+//		System.out.println(Arrays.toString(yAxis));
 		
 //		root.put("xAxisCategories", "['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']");
 //		root.put("hoursData", "[8, 7, 5, 4, 6, 7, 9]");

@@ -87,6 +87,82 @@ $(document).ready(function () {
         }*/
          ]
     });
+    
+    /* Secondary mood demo chart */
+     $('#chart-holder2').highcharts({
+        chart: {
+            zoomType: 'xy'
+        },
+        title: {
+            text: 'Amount of Sleep Mapped to Mood'
+        },
+        subtitle: {
+            text: 'This is demo data'
+        },
+        xAxis: [{
+            categories: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday',
+                'Sunday'],
+            crosshair: true
+        }],
+        yAxis: [{ // mood points
+            labels: {
+                format: '{value}',
+                style: {
+                    color: Highcharts.getOptions().colors[1]
+                }
+            },
+            title: {
+                text: 'Mood Points',
+                style: {
+                    color: Highcharts.getOptions().colors[1]
+                }
+            }
+        }, { // Secondary yAxis
+            title: {
+                text: 'Hours Slept',
+                style: {
+                    color: Highcharts.getOptions().colors[0]
+                }
+            },
+            labels: {
+                format: '{value} hours',
+                style: {
+                    color: Highcharts.getOptions().colors[0]
+                }
+            },
+            opposite: true
+        }],
+        tooltip: {
+            shared: true
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'left',
+            x: 120,
+            verticalAlign: 'top',
+            y: 100,
+            floating: true,
+            backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+        },
+        series: [{
+            name: 'Hours of Sleep',
+            type: 'column',
+            yAxis: 1,
+            data: [8, 7, 5, 4, 6, 0, 9],
+            tooltip: {
+                valueSuffix: ' hours'
+            }
+
+        }, {
+            name: 'Mood',
+            type: 'spline',
+            data: [4, 3, 3, 2, 3, 2, 4],
+            tooltip: {
+                valueSuffix: ''
+            }
+        } ]
+    });
+    
 });
 
 
@@ -137,6 +213,8 @@ button {
 		<br /> 
 		
 		<div id="chart-holder"></div>
+		<br><br>
+		<div id="chart-holder2"></div>
 		<br /> 
 		
 				<!-- putting in images --> 

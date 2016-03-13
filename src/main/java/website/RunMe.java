@@ -47,6 +47,8 @@ public class RunMe {
 	private void initializeRoutes() throws IOException {
 		// this is the home page
 		get(new RootRoute(cfg));
+		
+		get(new AboutRoute(cfg));
 
 	
 	}

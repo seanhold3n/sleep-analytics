@@ -21,7 +21,7 @@ $(document).ready(function () {
             text: 'Amount of Sleep Mapped to Mood'
         },
         subtitle: {
-            text: 'data is estimated'
+            text: 'This is Sean\'s actual sleep data!'
         },
         xAxis: [{
             categories: ${xAxisCategories},
@@ -76,14 +76,16 @@ $(document).ready(function () {
                 valueSuffix: ' hours'
             }
 
-        }, {
+        }
+        /*, {
             name: 'Mood',
             type: 'spline',
             data: [4, 3, 3, 2, 3, 2, 4],
             tooltip: {
                 valueSuffix: ''
             }
-        }]
+        }*/
+         ]
     });
 });
 

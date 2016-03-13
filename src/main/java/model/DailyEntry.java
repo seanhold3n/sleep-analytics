@@ -1,6 +1,6 @@
 package model;
 
-public class DailyEntry {
+public class DailyEntry implements Comparable<DailyEntry>{
 	
 	private final SimpleDay DAY;
 	
@@ -29,6 +29,21 @@ public class DailyEntry {
 	
 	public void setDuration(double duration) {
 		this.duration = duration;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		return DAY.equals(obj);
+	};
+	
+	@Override
+	public int hashCode() {
+		return DAY.hashCode();
+	}
+
+	@Override
+	public int compareTo(DailyEntry o) {
+		return this.hashCode() - o.hashCode();
 	}
 
 }

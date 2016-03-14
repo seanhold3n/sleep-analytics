@@ -1,19 +1,19 @@
 package model;
 
-import java.util.HashMap;
+import java.util.TreeMap;
 
 /**
  * @author sean
- * @deprecated Use a set of {@link DailyEntry} instead
  */
-@Deprecated
-public final class DaySleepDurationMap extends HashMap<SimpleDay,Double> {
+public final class DaySleepDurationMap extends TreeMap<SimpleDay,Double> {
 
 	private static final long serialVersionUID = -4755148060348935227L;
 	
 	private static DaySleepDurationMap singleMap;
 	
-	private DaySleepDurationMap(){}
+	private DaySleepDurationMap(){
+		
+	}
 	
 	public static DaySleepDurationMap getInstance(){
 		if (singleMap == null){

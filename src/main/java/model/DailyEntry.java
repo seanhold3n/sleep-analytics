@@ -1,5 +1,11 @@
 package model;
 
+/**
+ * @author Sean Holden (holdens@my.erau.edu)
+ * @deprecated DaySleepDurationMap + SimpleDay will do
+ *
+ */
+@Deprecated
 public class DailyEntry implements Comparable<DailyEntry>{
 	
 	private final SimpleDay DAY;
@@ -41,7 +47,6 @@ public class DailyEntry implements Comparable<DailyEntry>{
 		return DAY.hashCode();
 	}
 
-	@Override
 	public int compareTo(DailyEntry o) {
 		return this.hashCode() - o.hashCode();
 	}

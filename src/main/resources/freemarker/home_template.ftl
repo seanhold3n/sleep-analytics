@@ -4,6 +4,7 @@
     <title>My Site</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	<script src="http://code.highcharts.com/highcharts.js"></script>
+	<script src="http://www.highcharts.com/js/themes/dark-unica.js"></script>
 	<script>
 	
 	/*JavaScript file for the main UI code for the sleep analytics project 

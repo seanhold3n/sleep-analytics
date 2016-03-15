@@ -49,6 +49,9 @@ public class RunMe {
 		get(new RootRoute(cfg));
 		
 		get(new AboutRoute(cfg));
+		
+		// Main page CSS - static resource
+		get(new RootCSSRoute());
 
 	
 	}

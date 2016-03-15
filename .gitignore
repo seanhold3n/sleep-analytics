@@ -60,7 +60,14 @@ target/
 
 #Ipython Notebook
 .ipynb_checkpoints
+
+# Compiled Java bytecode
 /bin/
+*.class
+
+# Various editor config files
 .classpath
 .project
+.Rhistory
 .settings/
+.idea/

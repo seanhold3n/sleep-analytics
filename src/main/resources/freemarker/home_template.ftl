@@ -174,7 +174,7 @@ $(document).ready(function () {
 <body>
 
 	<!-- referencing the external style sheet --> 
-			<link rel = "stylesheet" href = "home_style.css">
+			<link rel = "stylesheet" href = "css/home_style.css">
 
 <!-- heading for our about page -->
 		<h2> I can has Sleep? <br />Cat Analytics </h2> 

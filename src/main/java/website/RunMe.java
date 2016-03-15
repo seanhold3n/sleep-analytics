@@ -50,9 +50,13 @@ public class RunMe {
 		
 		get(new AboutRoute(cfg));
 		
+		// data
+//		get(new Route("/data.json"));
+		
 		// static resources
-		get(new CSSRoute("/home_style.css"));
-		get(new CSSRoute("/about_style.css"));
+		get(new CSSRoute("home_style.css"));
+		get(new CSSRoute("about_style.css"));
+//		get(new JSRoute("main_chart.js"));
 
 	
 	}

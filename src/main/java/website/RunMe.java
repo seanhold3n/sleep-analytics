@@ -50,8 +50,9 @@ public class RunMe {
 		
 		get(new AboutRoute(cfg));
 		
-		// Main page CSS - static resource
-		get(new RootCSSRoute());
+		// static resources
+		get(new CSSRoute("/home_style.css"));
+		get(new CSSRoute("/about_style.css"));
 
 	
 	}

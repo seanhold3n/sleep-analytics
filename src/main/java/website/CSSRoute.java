@@ -11,10 +11,13 @@ import spark.Request;
 import spark.Response;
 import spark.Route;
 
-public class RootCSSRoute extends Route {
+public class CSSRoute extends Route {
 
-	protected RootCSSRoute() {
-		super("/home_style.css");
+	private String filename;
+	
+	protected CSSRoute(String file) {
+		super(file);
+		this.filename = file;
 	}
 
 
@@ -24,7 +27,7 @@ public class RootCSSRoute extends Route {
 
 		// Read from the CSS file
 		try (BufferedReader br = new BufferedReader(new FileReader(new File(
-				"src/main/resources/css/home_style.css")))){
+				"src/main/resources/css" + filename)))){
 
 			
 			String line = "";

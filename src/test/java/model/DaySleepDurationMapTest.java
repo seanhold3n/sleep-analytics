@@ -58,6 +58,9 @@ public class DaySleepDurationMapTest {
 		try (BufferedReader br = new BufferedReader(new FileReader(new File(TEST_DATA_LOCATION)))){
 			String line = "";
 
+			// Ignore the first line (CSV header)
+			br.readLine();
+			
 			while (((line = br.readLine()) != null)){
 				// Convert the line from CSV to a SleepEntry
 				SleepEntry se = SleepEntry.parseFromCSV(line);

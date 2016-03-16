@@ -14,8 +14,8 @@ import spark.Route;
 public class MainDataRoute extends Route {
 
 	public static final String TEST_DATA_LOCATION = RootRoute.class.getClass().getResource(
-//			"/data/sean-sleep-data.csv"
-			"/data/map-test-data.csv"
+			"/data/sean-sleep-data.csv"
+//			"/data/map-test-data.csv"
 			).getPath();
 
 	protected MainDataRoute() {
@@ -34,6 +34,9 @@ public class MainDataRoute extends Route {
 		try (BufferedReader br = new BufferedReader(new FileReader(new File(TEST_DATA_LOCATION)))){
 			String line = "";
 
+			// Ignore the first line (CSV header)
+			br.readLine();
+			
 			while (((line = br.readLine()) != null)){
 				// Convert the line from CSV to a SleepEntry
 				SleepEntry se = SleepEntry.parseFromCSV(line);
@@ -50,8 +53,6 @@ public class MainDataRoute extends Route {
 
 		} catch (IOException e){
 			e.printStackTrace();
-
-		
 		}
 		
 		// Prepare the response body

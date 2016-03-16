@@ -57,6 +57,7 @@ public class RunMe {
 		get(new CSSRoute("home_style.css"));
 		get(new CSSRoute("about_style.css"));
 //		get(new JSRoute("main_chart.js"));
+		get(new JSRoute("chart_hoursnight_demo_mood.js"));
 
 	
 	}

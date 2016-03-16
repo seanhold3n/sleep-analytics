@@ -2,6 +2,7 @@ package website;
 
 import static spark.Spark.get;
 import static spark.Spark.post;
+import static spark.Spark.staticFileLocation;
 import static spark.Spark.setPort;
 
 import java.io.BufferedReader;
@@ -45,6 +46,10 @@ public class RunMe {
 	}
 
 	private void initializeRoutes() throws IOException {
+		
+		
+//		staticFileLocation("target/classes/resources"); // Static files
+				
 		// this is the home page
 		get(new RootRoute(cfg));
 		
@@ -56,7 +61,7 @@ public class RunMe {
 		// static resources
 		get(new CSSRoute("home_style.css"));
 		get(new CSSRoute("about_style.css"));
-//		get(new JSRoute("main_chart.js"));
+		get(new JSRoute("chart_main.js"));
 		get(new JSRoute("chart_hoursnight_demo_mood.js"));
 
 	

@@ -31,7 +31,6 @@ public class MainDataRoute extends Route {
 
 	protected MainDataRoute() {
 		super("/data.json");
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
@@ -60,7 +59,7 @@ public class MainDataRoute extends Route {
 			e.printStackTrace();
 		}
 
-		response.type("application/json");
+		response.type("text/javascript");
 		return DaySleepDurationMap.getInstance().toJSCallback();
 	}
 

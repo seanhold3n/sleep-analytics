@@ -37,36 +37,36 @@ public class RootRoute extends FreemarkerBasedRoute{
 		// TODO ask user for data from webpage
 		
 		// Get CSV file
-		BufferedReader br = new BufferedReader(new FileReader(new File(TEST_DATA_LOCATION)));
-		String line = "";
-		
-		// Toss out header line
-		br.readLine();
-		
-		Set<DailyEntry> days = new HashSet<DailyEntry>();
-
-		// Establish first line
-		SleepEntry entry = SleepEntry.parseFromCSV(br.readLine());
-		SimpleDay today = entry.getEffectiveDate();
-		double duration = entry.getDuration();
-		
-		while (((line = br.readLine()) != null)){
-			// Convert the line from CSV to SleepEntry
-			entry = SleepEntry.parseFromCSV(line);
-			
-			// If new day
-			if (!today.equals(entry.getEffectiveDate())){
-				// Save
-				days.add(new DailyEntry(today, duration));
-				
-				// Restart
-				today = entry.getEffectiveDate();
-				duration = entry.getDuration();
-			}
-			else{
-				// Accumulate
-				duration += entry.getDuration();
-			}
+//		BufferedReader br = new BufferedReader(new FileReader(new File(TEST_DATA_LOCATION)));
+//		String line = "";
+//		
+//		// Toss out header line
+//		br.readLine();
+//		
+//		Set<DailyEntry> days = new HashSet<DailyEntry>();
+//
+//		// Establish first line
+//		SleepEntry entry = SleepEntry.parseFromCSV(br.readLine());
+//		SimpleDay today = entry.getEffectiveDate();
+//		double duration = entry.getDuration();
+//		
+//		while (((line = br.readLine()) != null)){
+//			// Convert the line from CSV to SleepEntry
+//			entry = SleepEntry.parseFromCSV(line);
+//			
+//			// If new day
+//			if (!today.equals(entry.getEffectiveDate())){
+//				// Save
+//				days.add(new DailyEntry(today, duration));
+//				
+//				// Restart
+//				today = entry.getEffectiveDate();
+//				duration = entry.getDuration();
+//			}
+//			else{
+//				// Accumulate
+//				duration += entry.getDuration();
+//			}
 			
 			// Add entry to map
 //			DaySleepDurationMap.getInstance().put(entry.getEffectiveDate(), entry.getDuration());
@@ -76,9 +76,9 @@ public class RootRoute extends FreemarkerBasedRoute{
 //				days.add(new DailyEntry(entry.getEffectiveDate()));
 //			}
 
-		}
+//		}
 
-		br.close();
+//		br.close();
 		
 		
 		SimpleHash root = new SimpleHash();
@@ -87,25 +87,25 @@ public class RootRoute extends FreemarkerBasedRoute{
 //		DaySleepDurationMap dsdm = DaySleepDurationMap.getInstance();
 //		System.out.println(dsdm.keySet());
 		
-		List<DailyEntry> entries = new ArrayList<>();
-		entries.addAll(days);
-		entries.sort(null);
-		
-		String[] xAxis = new String[entries.size()];
-		double[] yAxis = new double[entries.size()];
-
-		for (int i = 0; i < yAxis.length; i++) {
-			xAxis[i] = String.format("'%s'", entries.get(i).getDay().toString());
-			yAxis[i] = entries.get(i).getDuration();
-		}
+//		List<DailyEntry> entries = new ArrayList<>();
+//		entries.addAll(days);
+//		entries.sort(null);
+//		
+//		String[] xAxis = new String[entries.size()];
+//		double[] yAxis = new double[entries.size()];
+//
+//		for (int i = 0; i < yAxis.length; i++) {
+//			xAxis[i] = String.format("'%s'", entries.get(i).getDay().toString());
+//			yAxis[i] = entries.get(i).getDuration();
+//		}
 		
 //		System.out.println(Arrays.toString(xAxis));
 //		System.out.println(Arrays.toString(yAxis));
 		
 //		root.put("xAxisCategories", "['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']");
 //		root.put("hoursData", "[8, 7, 5, 4, 6, 7, 9]");
-		root.put("xAxisCategories", Arrays.toString(xAxis));
-		root.put("hoursData", Arrays.toString(yAxis));
+//		root.put("xAxisCategories", Arrays.toString(xAxis));
+//		root.put("hoursData", Arrays.toString(yAxis));
 
 		template.process(root, writer);
 	}

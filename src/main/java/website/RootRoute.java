@@ -22,9 +22,10 @@ import freemarker.template.TemplateException;
 
 public class RootRoute extends FreemarkerBasedRoute{
 
-	public static final String TEST_DATA_LOCATION = 
-			"target/classes/testdata/sean-sleep-data.csv";
-//			"target/classes/testdata/map-test-data.csv";
+	public static final String TEST_DATA_LOCATION = RootRoute.class.getClass().getResource(
+//			"/data/sean-sleep-data.csv"
+			"/data/map-test-data.csv"
+			).getPath();
 	
 	public RootRoute(Configuration cfg) throws IOException {
 		super("/", "home_template.ftl", cfg);

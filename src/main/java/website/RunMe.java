@@ -50,8 +50,8 @@ public class RunMe {
 		
 		get(new AboutRoute(cfg));
 		
-		// data
-//		get(new Route("/data.json"));
+		// data - /data.json
+		get(new MainDataRoute());
 		
 		// static resources
 		get(new CSSRoute("home_style.css"));

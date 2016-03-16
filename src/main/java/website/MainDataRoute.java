@@ -25,6 +25,9 @@ public class MainDataRoute extends Route {
 	@Override
 	public Object handle(Request request, Response response) {
 		// TODO ask user for data from webpage
+		
+		// Clear the map of any old data
+		DaySleepDurationMap.getInstance().clear();
 
 		// Get CSV file
 		try (BufferedReader br = new BufferedReader(new FileReader(new File(TEST_DATA_LOCATION)))){

@@ -34,7 +34,7 @@ public class RunMe {
 	private void initializeRoutes() throws IOException {
 		
 		
-//		staticFileLocation("target/classes/resources"); // Static files
+		staticFileLocation("/"); // Static files
 				
 		// this is the home page
 		get(new RootRoute(cfg));
@@ -43,12 +43,6 @@ public class RunMe {
 		
 		// data - /data.json
 		get(new MainDataRoute());
-		
-		// static resources
-		get(new CSSRoute("home_style.css"));
-		get(new CSSRoute("about_style.css"));
-		get(new JSRoute("chart_main.js"));
-		get(new JSRoute("chart_hoursnight_demo_mood.js"));
 
 	
 	}

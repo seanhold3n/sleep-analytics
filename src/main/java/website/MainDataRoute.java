@@ -60,7 +60,8 @@ public class MainDataRoute extends Route {
 		
 		// Get the callback parameter
 		String callbackParam = request.queryParams("callback");
-		System.out.println("Callback: " + callbackParam);
+//		System.out.println("Callback: " + callbackParam);
+		// Special thanks to http://stackoverflow.com/a/14621917 for helping me figure out the callback code
 		
 		// Attempt to use callback param
 		if (callbackParam != null){

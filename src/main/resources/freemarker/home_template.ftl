@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Site</title>
+    <title>Sleep Analytics Stuff</title>
     
+    <!-- For remote access -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	<script src="http://code.highcharts.com/highcharts.js"></script>
 	<script src="http://www.highcharts.com/js/themes/dark-unica.js"></script>
+	
+	<!-- For local access
+	<script src="/js/third-party/jquery.min.js"></script>
+	<script src="/js/third-party/highcharts.js"></script>
+	<script src="/js/third-party/dark-unica.js"></script>
+	-->
+	
 	<script src="/js/chart_main.js"></script> <!-- chart-holder -->
 	<script src="/js/chart_hoursnight_demo_mood.js"></script> <!-- chart-holder2 -->
 	

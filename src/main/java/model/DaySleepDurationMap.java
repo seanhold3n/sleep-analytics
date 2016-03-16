@@ -43,6 +43,7 @@ public final class DaySleepDurationMap extends TreeMap<SimpleDay,Double> {
 	 * Derived from http://jsfiddle.net/gh/get/jquery/1.9.1/highslide-software/highcharts.com/tree/master/samples/highcharts/demo/line-time-series/
 	 * @return
 	 */
+	@Deprecated
 	public String toJSCallback(){
 		StringBuilder sb = new StringBuilder();
 		// TODO

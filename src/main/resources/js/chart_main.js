@@ -3,6 +3,7 @@ http://jsfiddle.net/gh/get/jquery/1.9.1/highslide-software/highcharts.com/tree/m
 		
 $(function () {
 
+	$.getJSON('/data.json?callback=?', function (data) {
 
         $('#chart-holder').highcharts({
             chart: {
@@ -56,7 +57,8 @@ $(function () {
             series: [{
                 type: 'area',
                 name: 'Hours',
-                data: [[Date.UTC(2015,11,25),4.68],[Date.UTC(2015,11,26),13.08],[Date.UTC(2015,11,27),5.73],[Date.UTC(2015,11,28),12.00],[Date.UTC(2015,11,29),6.50],[Date.UTC(2015,11,30),6.67],[Date.UTC(2015,11,31),14.04]]
+                data: data
             }]
         });
+    });
 });

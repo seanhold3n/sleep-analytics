@@ -1,6 +1,6 @@
 package model;
 
-public class SimpleDay { //implements Comparable<SimpleDay> {
+public class SimpleDay implements Comparable<SimpleDay> {
 	
 	/** Four-digit year */
 	private final int YEAR;
@@ -35,11 +35,9 @@ public class SimpleDay { //implements Comparable<SimpleDay> {
 	}
 	
 	
-//	@Override
-//	public int compareTo(SimpleDay o) {
-//		// TODO Auto-generated method stub
-//		return 0;
-//	}
+	public int compareTo(SimpleDay o) {
+		return this.hashCode() - o.hashCode();
+	}
 	
 	@Override
 	public boolean equals(Object obj) {
@@ -54,10 +52,10 @@ public class SimpleDay { //implements Comparable<SimpleDay> {
 		}
 	}
 	
-//	@Override
-//	public int hashCode() {
-//		return YEAR*10000 + MONTH*100 + DAY;
-//	};
+	@Override
+	public int hashCode() {
+		return YEAR*10000 + MONTH*100 + DAY;
+	};
 
 	/** Returns the date as a string in "MM/DD/YY" format.  For example, March 12th 2016
 	 * would be represented as "03/12/16".

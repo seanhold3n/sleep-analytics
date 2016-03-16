@@ -42,7 +42,7 @@ public class DaySleepDurationMapTest {
 	public void testWithData() throws IOException {
 		// Import test data and assert that everything looks good
 		final String TEST_DATA_LOCATION = 
-				"target/classes/testdata/map-test-data.csv";
+				getClass().getResource("/data/map-test-data.csv").getPath();
 		
 		// Max allowed delta for double precision
 		final double DELTA = 0.01;

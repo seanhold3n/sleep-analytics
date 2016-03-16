@@ -12,6 +12,9 @@ import org.junit.Test;
 
 public class DaySleepDurationMapTest {
 	
+
+	final String TEST_DATA_LOCATION = getClass().getResource("/data/map-test-data.csv").getPath();
+	
 	@Test
 	public void testGetInstance() {
 		// On very first run - should be empty
@@ -38,11 +41,12 @@ public class DaySleepDurationMapTest {
 		assertEquals(9.0, dsdm.get(sd), 0.05);
 	}
 	
+	
+	/** Performs comprehensive data validation with the test set.  This test includes validation of {@link DaySleepDurationMap#toJSCallback()}.
+	 * @throws IOException
+	 */
 	@Test
 	public void testWithData() throws IOException {
-		// Import test data and assert that everything looks good
-		final String TEST_DATA_LOCATION = 
-				getClass().getResource("/data/map-test-data.csv").getPath();
 		
 		// Max allowed delta for double precision
 		final double DELTA = 0.01;
@@ -58,15 +62,15 @@ public class DaySleepDurationMapTest {
 				// Convert the line from CSV to a SleepEntry
 				SleepEntry se = SleepEntry.parseFromCSV(line);
 				
-				System.out.println(se.getEffectiveDate());
-				System.out.println(se.getEffectiveDate().hashCode());
+//				System.out.println(se.getEffectiveDate());
+//				System.out.println(se.getEffectiveDate().hashCode());
 				
 				// Add data from that to the map
 				DaySleepDurationMap.getInstance().addToDay(se.getEffectiveDate(), se.getDuration());
 
 			}
 			
-			// Make sure everything looks good
+			// Make sure the data looks good
 			DaySleepDurationMap dsdm = DaySleepDurationMap.getInstance();
 			assertEquals(7, dsdm.size());
 			assertEquals(4.68, dsdm.get(new SimpleDay(2015, 12, 25)), DELTA);
@@ -77,6 +81,21 @@ public class DaySleepDurationMapTest {
 			assertEquals(6.67, dsdm.get(new SimpleDay(2015, 12, 30)), DELTA);
 			assertEquals(14.04, dsdm.get(new SimpleDay(2015, 12, 31)), DELTA);
 
+			// Check JS callback string
+			final String expectedCallback = 
+			"callback([" +
+			"[Date.UTC(2015,11,25),4.68]," + // 11, b/c JS months are zero-based
+			"[Date.UTC(2015,11,26),13.08]," +
+			"[Date.UTC(2015,11,27),5.73]," +
+			"[Date.UTC(2015,11,28),12.00]," +
+			"[Date.UTC(2015,11,29),6.50]," +
+			"[Date.UTC(2015,11,30),6.67]," +
+			"[Date.UTC(2015,11,31),14.04]" +
+			"]);";
+			
+			assertEquals(expectedCallback, dsdm.toJSCallback());
+			
+			System.out.println(dsdm.toJSCallback());
 
 		} catch (FileNotFoundException fnfe){
 			fail("File not found, dawg!");

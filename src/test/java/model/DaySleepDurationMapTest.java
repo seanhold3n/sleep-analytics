@@ -84,21 +84,6 @@ public class DaySleepDurationMapTest {
 			assertEquals(6.67, dsdm.get(new SimpleDay(2015, 12, 30)), DELTA);
 			assertEquals(14.04, dsdm.get(new SimpleDay(2015, 12, 31)), DELTA);
 
-			// Check JS callback string
-			final String expectedCallback = 
-			"callback([" +
-			"[Date.UTC(2015,11,25),4.68]," + // 11, b/c JS months are zero-based
-			"[Date.UTC(2015,11,26),13.08]," +
-			"[Date.UTC(2015,11,27),5.73]," +
-			"[Date.UTC(2015,11,28),12.00]," +
-			"[Date.UTC(2015,11,29),6.50]," +
-			"[Date.UTC(2015,11,30),6.67]," +
-			"[Date.UTC(2015,11,31),14.04]" +
-			"]);";
-			
-			assertEquals(expectedCallback, dsdm.toJSCallback());
-			
-			System.out.println(dsdm.toJSCallback());
 
 		} catch (FileNotFoundException fnfe){
 			fail("File not found, dawg!");

@@ -38,29 +38,8 @@ public final class DaySleepDurationMap extends TreeMap<SimpleDay,Double> {
 		}
 	}
 	
-	/** Returns the data as a JS callback.
-	 * Data values are doubles that are formatted to hundreths (%.02f) precision.
-	 * Derived from http://jsfiddle.net/gh/get/jquery/1.9.1/highslide-software/highcharts.com/tree/master/samples/highcharts/demo/line-time-series/
-	 * @return
-	 */
-	@Deprecated
-	public String toJSCallback(){
-		StringBuilder sb = new StringBuilder();
-		// TODO
-		
-		// First line to start the callback
-		sb.append("callback(");
-
-		// Add all of the data in the map
-		sb.append(this.toJSONArray());
-		
-		// Add end flair
-		sb.append(");");
-		
-		return sb.toString();
-	}
 	
-	/** Returns the data as a JS callback.
+	/** Returns the data as a JSON array.
 	 * Data values are doubles that are formatted to hundreths (%.02f) precision.
 	 * Derived from http://jsfiddle.net/gh/get/jquery/1.9.1/highslide-software/highcharts.com/tree/master/samples/highcharts/demo/line-time-series/
 	 * @return

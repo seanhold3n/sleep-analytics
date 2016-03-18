@@ -27,11 +27,11 @@ public final class DaySleepDurationMap extends DayValuesMap {
 	 */
 	public void addToDay(SimpleDay day, double increment){
 		// If the key doesn't exist, add it
-		if (!getInstance().containsKey(day)){
-			getInstance().put(day, increment);
+		if (!containsKey(day)){
+			put(day, increment);
 		}
 		else {
-			getInstance().put(day, Double.sum(getInstance().get(day), increment));
+			put(day, Double.sum(get(day), increment));
 		}
 	}
 

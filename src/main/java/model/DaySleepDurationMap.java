@@ -1,12 +1,9 @@
 package model;
 
-import java.util.Map;
-import java.util.TreeMap;
-
 /**
  * @author sean
  */
-public final class DaySleepDurationMap extends TreeMap<SimpleDay,Double> {
+public final class DaySleepDurationMap extends DayValuesMap {
 
 	private static final long serialVersionUID = -4755148060348935227L;
 	
@@ -37,34 +34,6 @@ public final class DaySleepDurationMap extends TreeMap<SimpleDay,Double> {
 			getInstance().put(day, Double.sum(getInstance().get(day), increment));
 		}
 	}
-	
-	
-	/** Returns the data as a JSON array.
-	 * Data values are doubles that are formatted to hundreths (%.02f) precision.
-	 * Derived from http://jsfiddle.net/gh/get/jquery/1.9.1/highslide-software/highcharts.com/tree/master/samples/highcharts/demo/line-time-series/
-	 * @return
-	 */
-	public String toJSONArray(){
-		StringBuilder sb = new StringBuilder();
-		
-		// First line to start the array
-		sb.append("[");
 
-		// Add all of the data in the map
-		for (Map.Entry<SimpleDay, Double> entry : singleMap.entrySet()){
-			SimpleDay day = entry.getKey();
-			Double val = entry.getValue();
-			
-			sb.append(String.format("[%s,%.02f],", day.toJSDateUTC(), val));
-		}
-		
-		// Remove final comma
-		sb.delete(sb.length()-1, sb.length());
-		
-		// Add end flair
-		sb.append("]");
-		
-		return sb.toString();
-	}
 
 }

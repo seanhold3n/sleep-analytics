@@ -71,3 +71,6 @@ target/
 .Rhistory
 .settings/
 .idea/
+
+# Raw data
+*.csv

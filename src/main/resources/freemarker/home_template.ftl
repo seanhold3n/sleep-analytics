@@ -6,11 +6,13 @@
     <!-- For remote access -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	<script src="http://code.highcharts.com/stock/highstock.js"></script>
+	<script src="https://rawgit.com/laff/technical-indicators/master/technical-indicators.src.js"></script>
 	<script src="http://www.highcharts.com/js/themes/dark-unica.js"></script>
 	
 	<!-- For local access
 	<script src="/js/third-party/jquery.min.js"></script>
 	<script src="/js/third-party/highstock.js"></script>
+	<script src="/js/third-party/technical-indicators.src.js"></script>
 	<script src="/js/third-party/dark-unica.js"></script>
 	-->
 	

@@ -1,5 +1,10 @@
 /* Derived from:
-http://jsfiddle.net/gh/get/jquery/1.9.1/highslide-software/highcharts.com/tree/master/samples/highcharts/demo/line-time-series/ */
+http://jsfiddle.net/gh/get/jquery/1.9.1/highslide-software/highcharts.com/tree/master/samples/highcharts/demo/line-time-series/ 
+
+SMA inclusion derived from: http://jsfiddle.net/laff/WaEBc/
+
+*/
+
 		
 $(function () {
 
@@ -57,7 +62,22 @@ $(function () {
             series: [{
                 type: 'area',
                 name: 'Hours',
+				id: 'primary',
                 data: data
+            }, {
+				name: '3-day SMA',
+                linkedTo: 'primary',
+                showInLegend: true,
+                type: 'trendline',
+                algorithm: 'SMA',
+                periods: 3
+            }, {
+				name: '15-day SMA',
+                linkedTo: 'primary',
+                showInLegend: true,
+                type: 'trendline',
+                algorithm: 'SMA',
+                periods: 14
             }]
         });
     });

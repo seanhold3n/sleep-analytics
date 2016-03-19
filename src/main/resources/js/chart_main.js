@@ -5,7 +5,7 @@ $(function () {
 
 	$.getJSON('/data.json?callback=?', function (data) {
 
-        $('#chart-holder').highcharts({
+        $('#chart-holder').highcharts('StockChart', {
             chart: {
                 zoomType: 'x'
             },

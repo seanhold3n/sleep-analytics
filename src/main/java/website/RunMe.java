@@ -1,7 +1,7 @@
 package website;
 
 import static spark.Spark.get;
-import static spark.Spark.post;
+//import static spark.Spark.post;
 import static spark.Spark.staticFileLocation;
 import static spark.Spark.setPort;
 
@@ -12,13 +12,10 @@ import java.io.IOException;
 
 import model.DaySleepDurationMap;
 import model.SleepEntry;
-import freemarker.template.Configuration;
 
 public class RunMe {
 
-	private final Configuration cfg;
-
-	public static final String DATA_LOCATION = RootRoute.class.getClass().getResource(
+	public static final String DATA_LOCATION = RunMe.class.getClass().getResource(
 			"/data/sean-sleep-data.csv"
 //			"/data/map-test-data.csv"
 			).getPath();
@@ -33,26 +30,13 @@ public class RunMe {
 		loadDataMap();
 		
 		// Start server
-		cfg = createFreemarkerConfiguration();
 		setPort(8081);
 		initializeRoutes();
 	}
 
-	private Configuration createFreemarkerConfiguration() {
-		Configuration retVal = new Configuration();
-		retVal.setClassForTemplateLoading(RunMe.class, "/freemarker");
-		return retVal;
-	}
-
 	private void initializeRoutes() throws IOException {
 		
-		
 		staticFileLocation("/"); // Static files
-				
-		// this is the home page
-		get(new RootRoute(cfg));
-		
-		get(new AboutRoute(cfg));
 		
 		// Data routes
 		get(new MainDataRoute());	// /data.json

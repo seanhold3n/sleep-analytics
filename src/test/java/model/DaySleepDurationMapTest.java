@@ -15,7 +15,8 @@ public class DaySleepDurationMapTest {
 	
 
 	private final String TEST_DATA_LOCATION = getClass().getResource("/data/map-test-data.csv").getPath();
-	
+//	"/data/sean-sleep-data.csv"
+
 	// Max allowed delta for double precision operations
 	private final double DELTA = 0.01;
 	
@@ -50,6 +51,8 @@ public class DaySleepDurationMapTest {
 		// Load the map
 		loadMapWithTestData();
 		
+//		System.out.println(DaySleepDurationMap.getInstance().toJSONArray());
+		
 		// Populate the expected results
 		DayValuesMap expectedSMAs = new DayValuesMap();
 		expectedSMAs.put(new SimpleDay(2015, 12, 27), 7.83);
@@ -58,17 +61,28 @@ public class DaySleepDurationMapTest {
 		expectedSMAs.put(new SimpleDay(2015, 12, 30), 8.39);
 		expectedSMAs.put(new SimpleDay(2015, 12, 31), 9.07);
 		
-		System.out.println("Day\t\tExpected\tActual");
-			
+		DayValuesMap actualSMAs = DaySleepDurationMap.getInstance().getSimpleMovingAverage(3);
+		
+
+		System.out.println(expectedSMAs.toJSONArray());
+		System.out.println(actualSMAs.toJSONArray());
+		
 		// Compare each value (this is to allow for a delta between double values)
-		for (Map.Entry<SimpleDay, Double> e : DaySleepDurationMap.getInstance().getSimpleMovingAverage(3).entrySet()){
-			// Get the expected sma
-			double expectedVal = expectedSMAs.get(e.getKey());
-			
-			System.out.printf("%s\t%.2f\t\t%.2f\n", e.getKey(), expectedVal, e.getValue());
-			
-			// Compare against actual SMA
+//		for (Map.Entry<SimpleDay, Double> e : actualSMAs.entrySet()){
+//			// Get the expected sma
+//			double expectedVal = expectedSMAs.get(e.getKey());
+//			
+//			// Compare against actual SMA
 //			assertEquals(expectedVal, e.getValue(), DELTA);
+//		}
+		
+		for (Map.Entry<SimpleDay, Double> e : expectedSMAs.entrySet()){
+			// Get the expected sma
+			double actualVal = actualSMAs.get(e.getKey());
+
+			// Compare against actual SMA
+			assertEquals(actualVal, e.getValue(), DELTA);
+			
 		}
 		
 	}

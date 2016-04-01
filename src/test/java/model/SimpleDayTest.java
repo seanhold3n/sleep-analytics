@@ -6,14 +6,15 @@ import org.junit.Test;
 
 public class SimpleDayTest {
 
-	@Test
-	public void testSimpleDay() {
-		fail("Not yet implemented");
-	}
+//	@Test
+//	public void testSimpleDay() {
+//		fail("Not yet implemented");
+//	}
 
 	@Test
 	public void testGetYear() {
-		fail("Not yet implemented");
+		SimpleDay myDay = new SimpleDay(2016, 03, 13);
+		assertEquals(2016, myDay.getYear());
 	}
 
 	@Test
@@ -24,7 +25,8 @@ public class SimpleDayTest {
 
 	@Test
 	public void testGetDay() {
-		fail("Not yet implemented");
+		SimpleDay myDay = new SimpleDay(2016, 03, 13);
+		assertEquals(13, myDay.getDay());
 	}
 
 	@Test

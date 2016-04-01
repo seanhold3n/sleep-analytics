@@ -5,9 +5,13 @@ import spark.Request;
 import spark.Response;
 import spark.Route;
 
-public class MainDataRoute extends Route {
+/** Data route that returns a JSON document of days and the corresponding number of hours of sleep on each day.
+ * @author Sean Holden
+ *
+ */
+public class DailyHoursDataRoute extends Route {
 
-	protected MainDataRoute() {
+	protected DailyHoursDataRoute() {
 		super("/data.json");
 	}
 
@@ -15,7 +19,7 @@ public class MainDataRoute extends Route {
 	public Object handle(Request request, Response response) {
 		// TODO ask user for data from webpage
 		
-		// Note: Sleep data is loaded on server start-up
+		// Note: Sleep data (DataSleepDurationMap) is loaded on server start-up
 		
 		// Prepare the response body
 		String responseStr;

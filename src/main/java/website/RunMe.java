@@ -55,7 +55,7 @@ public class RunMe {
 		get(new AboutRoute(cfg));
 		
 		// Data routes
-		get(new MainDataRoute());	// /data.json
+		get(new DailyHoursDataRoute());	// /data.json
 		get(new SMADataRoute());	// /sma.json
 
 	}

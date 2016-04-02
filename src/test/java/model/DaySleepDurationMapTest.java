@@ -123,9 +123,6 @@ public class DaySleepDurationMapTest {
 				// Convert the line from CSV to a SleepEntry
 				SleepEntry se = SleepEntry.parseFromCSV(line);
 
-//				System.out.println(se.getEffectiveDate());
-//				System.out.println(se.getEffectiveDate().hashCode());
-
 				// Add data from that to the map
 				DaySleepDurationMap.getInstance().addToDay(se.getEffectiveDate(), se.getDuration());
 

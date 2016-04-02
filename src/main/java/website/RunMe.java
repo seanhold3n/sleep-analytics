@@ -9,6 +9,8 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import model.DaySleepDurationMap;
 import model.SleepEntry;
@@ -65,6 +67,9 @@ public class RunMe {
 		// TODO move this sort of stuff into the map class and have a populate method or the like (same as FYP project)
 		DaySleepDurationMap.getInstance().clear();
 
+		// List of entries
+		List<SleepEntry> entries = new ArrayList<SleepEntry>();
+		
 		// Get CSV file
 		BufferedReader br = new BufferedReader(new FileReader(new File(DATA_LOCATION)));
 		String line = "";
@@ -75,14 +80,15 @@ public class RunMe {
 		while (((line = br.readLine()) != null)){
 			// Convert the line from CSV to a SleepEntry
 			SleepEntry se = SleepEntry.parseFromCSV(line);
-
-//			System.out.println(se.getEffectiveDate());
-//			System.out.println(se.getEffectiveDate().hashCode());
-
-			// Add data from that to the map
-			DaySleepDurationMap.getInstance().addToDay(se.getEffectiveDate(), se.getDuration());
-
+			// Add it to the entry list
+			entries.add(se);
 		}
+		
+		for (SleepEntry se : entries){
+			// Add data from list to the map
+			DaySleepDurationMap.getInstance().addToDay(se.getEffectiveDate(), se.getDuration());
+		}
+		
 
 		br.close();
 		

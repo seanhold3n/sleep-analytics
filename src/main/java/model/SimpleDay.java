@@ -12,6 +12,11 @@ public class SimpleDay implements Comparable<SimpleDay> {
 	private final int DAY;
 	
 	
+	/** Creates a new SimpleDay object.
+	 * @param year The year (e.g. 2016)
+	 * @param month The month as a one-based integer (e.g. 1 = January)
+	 * @param day The day (e.g. 1 = 1st)
+	 */
 	public SimpleDay(int year, int month, int day) {
 		super();
 		YEAR = year;

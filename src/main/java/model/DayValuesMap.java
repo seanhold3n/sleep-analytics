@@ -8,7 +8,7 @@ public class DayValuesMap extends TreeMap<SimpleDay, Double> {
 	private static final long serialVersionUID = 6014403244969632728L;
 	
 	
-	/** Returns the data as a JSON array.
+	/** Returns the data as a JSON array.  Datse are represented in Javascript Date.UTC format using the method {@link SimpleDay#toJSDateUTC()}.
 	 * Data values are doubles that are formatted to hundreths (%.02f) precision.
 	 * Derived from http://jsfiddle.net/gh/get/jquery/1.9.1/highslide-software/highcharts.com/tree/master/samples/highcharts/demo/line-time-series/
 	 * @return

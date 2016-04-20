@@ -57,9 +57,9 @@ public class SleepEntryTest {
 		
 		// Create expected values
 		Calendar timeSleep = Calendar.getInstance();
-		timeSleep.set(2015, Calendar.DECEMBER, 3, 21, 00); // 3, because day is zero-based
+		timeSleep.set(2015, Calendar.DECEMBER, 4, 21, 00);
 		Calendar timeWake = Calendar.getInstance();
-		timeWake.set(2015, Calendar.DECEMBER, 4, 00, 40);
+		timeWake.set(2015, Calendar.DECEMBER, 5, 00, 40);
 		double duration = 3.66;
 		
 		// Test against actual
@@ -89,7 +89,7 @@ public class SleepEntryTest {
 	public void testGetEffectiveDate() {
 		// Create test values
 		Calendar timeSleep = Calendar.getInstance();
-		timeSleep.set(2015, Calendar.DECEMBER, 3, 21, 00); // 3, because day is zero-based
+		timeSleep.set(2015, Calendar.DECEMBER, 3, 21, 00);
 		Calendar timeWake = Calendar.getInstance();
 		timeWake.set(2015, Calendar.DECEMBER, 4, 00, 40);
 		SleepEntry entry = new SleepEntry(timeSleep, timeWake, 0.0);

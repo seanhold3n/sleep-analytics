@@ -93,6 +93,8 @@ public class SleepEntryTest {
 		Calendar timeWake = Calendar.getInstance();
 		timeWake.set(2015, Calendar.DECEMBER, 4, 00, 40);
 		SleepEntry entry = new SleepEntry(timeSleep, timeWake, 0.0);
+		SimpleDay expectedEffDate = new SimpleDay(2015, 12, 04);
+		assertEquals(expectedEffDate, entry.getEffectiveDate());
 	}
 
 	@Test

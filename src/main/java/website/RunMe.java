@@ -29,6 +29,9 @@ public class RunMe {
 		new RunMe();
 	}
 
+	/** Starts a web server on <a href="http://localhost:8081">http://localhost:8081</a> with the sleep analytics interface.
+	 * @throws IOException
+	 */
 	public RunMe() throws IOException {
 
 		// Load data

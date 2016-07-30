@@ -56,14 +56,13 @@ public final class DaySleepDurationMap extends DayValuesMap {
 		
 		for (Map.Entry<SimpleDay, Double> todayEntry : this.entrySet()){
 
-			// If in the first nDays (i.e. not enough items have been added to the set yet), just add them
-			if (smaActiveSet.size() < nDays){
-				smaActiveSet.add(todayEntry);
-			}
-			// Compute SMA
-			else{
+			// Add the entry to the active set
+			smaActiveSet.add(todayEntry);
+			
+			// If reached the first nDays (i.e. enough items have been added to the set), compute SMA
+			if (smaActiveSet.size() >= nDays){
 				if (firstSMA){
-					// Use the values in the set
+					// Set baseline SMA
 					for (Map.Entry<SimpleDay, Double> activeEntry : smaActiveSet){
 						sma += activeEntry.getValue();
 					}
@@ -79,9 +78,8 @@ public final class DaySleepDurationMap extends DayValuesMap {
 					// Get new SMA based on old one
 					sma = sma + todayEntry.getValue()/nDays - nthElementBack.getValue()/nDays;
 					
-					// Remove the nth-back element and load the new value
+					// Remove the nth-back element
 					smaActiveSet.remove(0);
-					smaActiveSet.add(todayEntry);
 					
 				}
 				smaMap.put(todayEntry.getKey(), sma);

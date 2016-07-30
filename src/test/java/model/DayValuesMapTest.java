@@ -2,6 +2,7 @@ package model;
 
 import static org.junit.Assert.*;
 
+import java.util.Map;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -13,7 +14,9 @@ public class DayValuesMapTest {
 
 	/** The map to test */
 	private DayValuesMap testMap;
-	
+
+	// Max allowed delta for double precision operations
+	private final double DELTA = 0.01;
 	
 	/** Loads the map with arbitrary values for testing.
 	 * @throws Exception
@@ -26,6 +29,32 @@ public class DayValuesMapTest {
 		testMap.put(new SimpleDay(2016, 03, 03), 10.3);
 		testMap.put(new SimpleDay(2016, 03, 04), 7.35);
 		testMap.put(new SimpleDay(2016, 03, 05), 9.43);
+	}
+	
+	@Test
+	public void testGetMovingStandardDeviations(){
+		// Load expected results for a 4-day moving SD
+		DayValuesMap expectedSDs = new DayValuesMap();
+		
+		// Note: calculations are as population, not sample
+		expectedSDs.put(new SimpleDay(2016, 03, 04), 1.4104);
+		expectedSDs.put(new SimpleDay(2016, 03, 05), 1.53161);
+		
+		// Get actual values
+		DayValuesMap actualSDs = testMap.getMovingStandardDeviation(4);
+		
+		System.out.println("DayValuesMapTest - expected SDs : " + expectedSDs.toJSONArray());
+		System.out.println("DayValuesMapTest - actual SDs	: " + actualSDs.toJSONArray());
+		
+		for (Map.Entry<SimpleDay, Double> e : expectedSDs.entrySet()){
+			// Get the expected sma
+			double actualVal = actualSDs.get(e.getKey());
+
+			// Compare against actual SMA
+			assertEquals(e.getValue(), actualVal, DELTA);
+			
+		}
+		
 	}
 
 	@Test

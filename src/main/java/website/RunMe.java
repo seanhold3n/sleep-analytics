@@ -62,6 +62,7 @@ public class RunMe {
 		// Data routes
 		get(new DailyHoursDataRoute());	// /data.json
 		get(new SMADataRoute());	// /sma.json
+		get(new StddevDataRoute());	// /stddev.json
 
 	}
 	

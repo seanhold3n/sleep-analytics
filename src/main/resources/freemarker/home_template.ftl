@@ -17,6 +17,7 @@
 	-->
 	
 	<script src="/js/chart_main.js"></script> <!-- chart-holder -->
+	<script src="/js/chart_main_stddev.js"></script> <!-- chart-holder-stddev -->
 	<script src="/js/chart_hoursnight_demo_mood.js"></script> <!-- chart-holder2 -->
 	
 </head>
@@ -33,6 +34,8 @@
 		<br /> 
 		
 		<div id="chart-holder"></div>
+		<br><br>
+		<div id="chart-holder-stddev"></div>
 		<br><br>
 		<div id="chart-holder2"></div>
 		<br /> 

@@ -8,14 +8,14 @@ SMA inclusion derived from: http://jsfiddle.net/laff/WaEBc/
 		
 $(function () {
 
-	$.getJSON('/data.json?callback=?', function (data) {
+	$.getJSON('/stddev.json?callback=?', function (data) {
 
-        $('#chart-holder').highcharts('StockChart', {
+        $('#chart-holder-stddev').highcharts('StockChart', {
             chart: {
                 zoomType: 'x'
             },
             title: {
-                text: 'My Actual Sleep Data'
+                text: 'Moving Standard Deviation (Volatility)'
             },
             subtitle: {
                 text: document.ontouchstart === undefined ?
@@ -26,7 +26,7 @@ $(function () {
             },
             yAxis: {
                 title: {
-                    text: 'Hours slept'
+                    text: 'Volatility in Hours'
                 }
             },
             legend: {
@@ -60,25 +60,11 @@ $(function () {
             },
 
             series: [{
-                type: 'area',
-                name: 'Hours',
+                type: 'line',
+                name: 'Volatility',
 				id: 'primary',
                 data: data
-            }/*, {
-				name: '3-day SMA',
-                linkedTo: 'primary',
-                showInLegend: true,
-                type: 'trendline',
-                algorithm: 'SMA',
-                periods: 3
-            }, {
-				name: '15-day SMA',
-                linkedTo: 'primary',
-                showInLegend: true,
-                type: 'trendline',
-                algorithm: 'SMA',
-                periods: 14
-            }*/]
+            }]
         });
     });
 });

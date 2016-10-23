@@ -64,8 +64,8 @@ public class DaySleepDurationMapTest {
 		DayValuesMap actualSMAs = DaySleepDurationMap.getInstance().getSimpleMovingAverage(3);
 		
 
-		System.out.println(expectedSMAs.toJSONArray());
-		System.out.println(actualSMAs.toJSONArray());
+		System.out.println("DaySleepDurationMapTest - expected SMAs	: " + expectedSMAs.toJSONArray());
+		System.out.println("DaySleepDurationMapTest - actual SMAa	: " + actualSMAs.toJSONArray());
 		
 		// Compare each value (this is to allow for a delta between double values)
 //		for (Map.Entry<SimpleDay, Double> e : actualSMAs.entrySet()){

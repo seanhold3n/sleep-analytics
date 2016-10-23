@@ -40,7 +40,7 @@ public final class DaySleepDurationMap extends DayValuesMap {
 	}
 
 	
-	
+	// TODO move to DayValuesMap? (same for stddev) - also pluralize (b/c returns multiple SMAs)
 	/** Get the simple moving averages for each day (that is, the unweighted mean of the previous nDays of data).
 	 * @param nDays The number of days over which to compute the average
 	 * @return A map of all day/SMA pairings

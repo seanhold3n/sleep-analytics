@@ -1,17 +1,13 @@
 # sleep-analytics
-Sleep trends and analytics tool
 
-Project name: can Haz SLEEEP? 
+This program allows a user to input and look at sleep patterns.  A user can This analysis is beneficial for identifying sleep trends, and because it will allow for greater self awareness and that will help the  user to identify when they could potentially mitigate symptoms of depression.
 
-Project description: This product allows users to input and look at their sleep patterns. By looking at sleep patterns, it 
-allows the user to correlate their mood with the amount of sleep they get. By using this tool, users can detect when they 
-might be sinking into a depression. This is beneficial because it will allow for greater self awareness and that will help the 
-user to identify when they could potentially mitigate symptoms of depression 
+## Dependencies
+This project uses Maven for dependency management.  Along with the base Java JDK, this project uses the following libraries:
+ * **spark-core** - base Java web server
+ * **freemarker** - webpage templating
+ 
+Once all dependencies are met, the server may be starting by executing the RunMe class in src/main/java/website.
 
-copyright and licensing info: 
-
-install, configure, and run: 
-
-authors: seanhold3n and spacedinosaur95 
-
-
+## Authors
+seanhold3n and spacedinosaur95

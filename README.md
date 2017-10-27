@@ -1,6 +1,6 @@
 # sleep-analytics
 
-This program allows a user to input and look at sleep patterns.  A user can This analysis is beneficial for identifying sleep trends, and because it will allow for greater self awareness and that will help the  user to identify when they could potentially mitigate symptoms of depression.
+This program allows a user to load and look at trends in sleep patterns, including amount of sleep and consistency.  This analysis allows for greater self-awareness, which can help the user identify when they could potentially mitigate symptoms of depression or other sleep-related medical conditions.
 
 As seen at PolyHacks 2016 [(Devpost link here)](https://devpost.com/software/i-can-haz-sleep).
 
